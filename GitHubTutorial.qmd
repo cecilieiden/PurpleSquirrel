@@ -1,0 +1,34 @@
+---
+title: "GitHub tutorial"
+format: html
+editor: visual
+---
+
+\*\*2.6 Makeing a Repo
+
+Now you are ready to start using RStudio and GitHub. There are three main workflows:
+
+Make a new local repo and push it to GitHub Push an existing local repo to GitHub Clone an existing repo from GitHub onto your computer We will cover these in turn: choose the best one for your circumstances.
+
+By default, repositories on GitHub are publicly readable. They can be made private if necessary.
+
+```{r}
+
+library(tidyverse)
+
+
+penguinData<-palmerpenguins::penguins 
+
+penguinData %>% 
+  ggplot(aes(species, bill_length_mm, fill=island))+
+   geom_boxplot()+
+  scale_fill_manual(values=c("hotpink", "purple", "blue"))+
+  ggtitle("testing GitHub - push pull")+
+  theme_bw()
+
+
+penguinData
+
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
